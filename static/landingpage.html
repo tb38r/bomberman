@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/landing.css">
+    <title>Bomberman Landing Page</title>
+</head>
+<body>
+<div class="outer-container">
+    <div class="inner-container">
+        <div class="container">
+            <div class="title">
+                <div class="bomber-font">
+                    BOMBERMAN
+                </div>
+            </div>
+            <div class="input-div">
+                <input class='input-name' type="text" placeholder="Who's Playing?">
+<button class="playername-button">Go!</button>
+            </div>
+        
+        </div>
+    </div>
+
+
+</div>
+
+<script  >
+
+    const submitButton = document.querySelector('.playername-button')
+    
+    const handleClick = (e)=>{
+        e.preventDefault()
+        const nickname = document.querySelector('.input-name').value
+        console.log(nickname);
+        const respObj = {}
+        respObj.name = nickname
+
+   fetch('/namecheck',{
+    method:'POST',
+    headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+    body : JSON.stringify(respObj)
+   })
+   .then(resp =>resp.json())
+   .then(data =>{
+    console.log('From Server', data);
+   })
+
+
+
+    }
+
+
+    submitButton.addEventListener('click',handleClick)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "BomberFont";
+  src: url("fonts/bomberman.ttf") format("truetype");
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu;
+  margin: 0;
+  height: 100vh;
+}
+
+.bomber-font {
+  font-family: "BomberFont", sans-serif;
+}
+
+.outer-container {
+  height: 100%;
+  background-color: black;
+  padding: 10%;
+}
+
+.inner-container {
+  height: 90%;
+  background-color: rgb(209, 203, 204);
+  padding: 10%;
+}
+
+.container {
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: rgb(255, 0, 47);
+  font-size: 80px;
+}
+
+
+
+.input-div {
+  width: 79%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+.input-name {
+    width: 75%;
+
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .playername-button{
+    width: 20%;
+    background-color: orangered;
+    border-radius: 20px;
+    font-size: 30px;
+    color:white;
+    border-color: transparent;
+    cursor: pointer;
+
+  }
